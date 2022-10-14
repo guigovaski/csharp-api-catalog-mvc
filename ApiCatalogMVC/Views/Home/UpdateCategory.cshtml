@@ -1,0 +1,31 @@
+﻿@model ApiCatalogMVC.ViewModels.CategoryViewModel
+
+@{
+    ViewData["Title"] = "Atualizar categoria";
+}
+
+<h2>Atualizar categoria</h2>
+<hr />
+@if (ViewBag.Error != null)
+{
+    <br />
+    <div class="row" style="color: #ff0000;">
+        <h4>@ViewBag.Error</h4>
+    </div>
+    <br />
+}
+<form asp-action="UpdateCategory">
+    <input type="hidden" asp-for="CategoriaId" />
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label">Nome</label>
+        <input asp-for="Nome" class="form-control">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ImagemUrl" class="form-label">Imagem</label>
+        <input asp-for="ImagemUrl" class="form-control">
+        <span asp-validation-for="ImagemUrl" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Atualizar</button>
+    <a asp-action="Index" class="btn btn-danger">Cancelar</a>
+</form>

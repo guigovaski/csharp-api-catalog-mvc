@@ -1,0 +1,17 @@
+﻿@model ApiCatalogMVC.ViewModels.CategoryViewModel
+
+@{
+    ViewData["Title"] = "Excluir categoria";
+}
+
+<h2 class="text-danger">Tem certeza que deseja excluir esta categoria?</h2>
+<br />
+<form asp-action="DeleteCategory">
+    <input type="hidden" asp-for="CategoriaId" />
+    <button type="submit" class="btn btn-primary" title="Excluir">
+        Excluir
+    </button>
+    <a asp-action="Index" class="btn btn-danger" title="Voltar">
+        Cancelar
+    </a>
+</form>

@@ -1,0 +1,27 @@
+﻿@model ApiCatalogMVC.ViewModels.UserRegisterViewModel
+
+@{
+    ViewData["Title"] = "Registrar";
+}
+
+<form asp-action="Register">
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" type="email" class="form-control">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ConfirmPassword" class="form-label">Cofirm Password</label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control">
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Entrar</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-danger">
+        Cancelar
+    </a>
+</form>
